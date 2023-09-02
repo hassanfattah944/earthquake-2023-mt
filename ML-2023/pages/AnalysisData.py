@@ -401,20 +401,6 @@ fig5, ax = plt.subplots()
 disp.plot(cmap=plt.cm.Blues, ax=ax)
 plt.xticks(rotation=45)
 st.pyplot(fig5)
-
-
-
-
-
-
-#import plotly.express as px
-# Compute the confusion matrix
-#cm = confusion_matrix(y_test, svm_pred, labels=svm_model.classes_)
-# Display the confusion matrix using Plotly
-#fig = px.imshow(cm, x=svm_model.classes_, y=svm_model.classes_,
-            #    labels=dict(x="Predicted", y="Actual", color="Count"),
-             #   color_continuous_scale='Blues')
-#st.plotly_chart(fig)
 hide_st_style = """
             <style>
             footer {visibility: hidden;}
