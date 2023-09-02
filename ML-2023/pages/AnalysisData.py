@@ -19,7 +19,7 @@ st.set_page_config(
 )
 st.subheader("ML Case-Studies | Natural Language Processing (NLP).")
 st.error('A. Data Analysis (Earthquake ) :')
-data = pd.read_csv('ML-2023/tweet_data_labeled.csv', nrows=1000)
+data = pd.read_csv('https://drive.google.com/file/d/1JGJ6lbuad4myVzKFp1YGzj9xu9kaZ9np/view?usp=drive_link', nrows=1000)
 st.info('Importing Datasets.')
 
 st.write(data)
