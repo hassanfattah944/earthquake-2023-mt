@@ -7,6 +7,12 @@ from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 from nltk.stem import PorterStemmer
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, ConfusionMatrixDisplay
+import string
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import wordnet
 st.set_page_config(
     page_title="ML App",
     page_icon="👋",
@@ -48,17 +54,6 @@ def filter_by_language(dataset, language):
     return dataset[data['language'] == language]
 
 filtered_data  = filter_by_language(data, 'en')
-import re
-import string
-import nltk
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-from nltk.stem import WordNetLemmatizer
-from nltk.corpus import wordnet
-
-
-
-
 nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
