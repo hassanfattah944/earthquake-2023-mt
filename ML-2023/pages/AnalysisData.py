@@ -19,7 +19,7 @@ st.set_page_config(
 )
 st.subheader("ML Case-Studies | Natural Language Processing (NLP).")
 st.error('A. Data Analysis (Earthquake ) :')
-data = pd.read_csv('https://docs.google.com/spreadsheets/d/1IJO2omZeIjtLoKqZKDkYNG3IP0IraGjVzM3XAiXLyz0/edit#gid=581927646', nrows=1000)
+data = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vSpgiaK_m2rCTYz9gtDiq4Tyf0EUPT0uUXD1GTFhW5z_8Ao4P6_H1Q3Jihy20B0KFI_dRcSGt44gSyj/pubhtml', nrows=1000)
 st.info('Importing Datasets.')
 
 st.write(data)
