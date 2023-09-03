@@ -211,15 +211,7 @@ plt.ylabel('Number of Tweets')
 # Display the Matplotlib plot using Streamlit's pyplot function
 st.pyplot(plt)
  
-from wordcloud import WordCloud
-st.info("Word Cloud Example")
-fig2=plt.figure(figsize=(20,15))
-text = ' '.join([word for word in df['content']])
-plt.figure(figsize=(20,15), facecolor='None')
-wordcloud = WordCloud(max_words=500, width=1600, height=800).generate(text)
-plt.imshow(wordcloud, interpolation='bilinear')
-plt.axis("off")
-plt.title('Most frequent words used in  Tweets', fontsize=19)
+
 
 # Streamlit app code
 
