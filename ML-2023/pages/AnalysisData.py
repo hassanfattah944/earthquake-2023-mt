@@ -96,16 +96,16 @@ def preprocess_text(text):
 # Apply the preprocessing function to the 'cleaned_content' column
 filtered_data['cleaned_content'] = filtered_data['content'].apply(preprocess_text)
 
-#import demoji
-#demoji.download_codes()
-#def processed_text(text):
+import demoji
+demoji.download_codes()
+def processed_text(text):
     # Remove emojis using the demoji library
-   # text = demoji.replace(text, repl="")
+    text = demoji.replace(text, repl="")
 
     # Remove numbers using regex
-   # text = re.sub(r'\d', '', text)
+    text = re.sub(r'\d', '', text)
 
-   # return text
+     return text
 st.info('Clean The DataSet.')
 # Apply the preprocessing function to the 'cleaned_content' column
 st.write(filtered_data)
@@ -211,7 +211,19 @@ plt.ylabel('Number of Tweets')
 # Display the Matplotlib plot using Streamlit's pyplot function
 st.pyplot(plt)
  
+from wordcloud import WordCloud
+st.info("Word Cloud Example")
+fig2=plt.figure(figsize=(20,15))
+text = ' '.join([word for word in df['content']])
+plt.figure(figsize=(20,15), facecolor='None')
+wordcloud = WordCloud(max_words=500, width=1600, height=800).generate(text)
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis("off")
+plt.title('Most frequent words used in  Tweets', fontsize=19)
 
+# Streamlit app code
+
+st.image(wordcloud.to_array(), use_column_width=True)
  # Display the word cloud using Streamlit's pyplot function
 
 st.error("D.Encoding Data.")
