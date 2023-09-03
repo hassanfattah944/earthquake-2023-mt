@@ -96,16 +96,16 @@ def preprocess_text(text):
 # Apply the preprocessing function to the 'cleaned_content' column
 filtered_data['cleaned_content'] = filtered_data['content'].apply(preprocess_text)
 
-import demoji
-demoji.download_codes()
-def processed_text(text):
+#import demoji
+#demoji.download_codes()
+#def processed_text(text):
     # Remove emojis using the demoji library
-    text = demoji.replace(text, repl="")
+   # text = demoji.replace(text, repl="")
 
     # Remove numbers using regex
-    text = re.sub(r'\d', '', text)
+   # text = re.sub(r'\d', '', text)
 
-    return text
+   # return text
 st.info('Clean The DataSet.')
 # Apply the preprocessing function to the 'cleaned_content' column
 st.write(filtered_data)
