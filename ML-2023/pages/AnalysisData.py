@@ -1,5 +1,4 @@
 import pandas as pd
-pip install demoji
 import matplotlib.pyplot as plt
 from collections import Counter
 import re
