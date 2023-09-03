@@ -6,3 +6,5 @@ scikit-learn
 streamlit
 stopwords
 demoji
+pip install -r requirements.txt
+
