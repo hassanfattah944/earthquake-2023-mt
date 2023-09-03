@@ -13,7 +13,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import wordnet
-#import demoji
+
 
 st.set_page_config(
     page_title="ML App",
@@ -96,7 +96,7 @@ def preprocess_text(text):
 # Apply the preprocessing function to the 'cleaned_content' column
 filtered_data['cleaned_content'] = filtered_data['content'].apply(preprocess_text)
 
-
+import demoji
 demoji.download_codes()
 def processed_text(text):
     # Remove emojis using the demoji library
