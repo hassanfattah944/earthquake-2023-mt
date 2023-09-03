@@ -7,3 +7,4 @@ streamlit
 stopwords
 demoji==0.4.0
 wordcloud
+pip install -r requirements.txt
