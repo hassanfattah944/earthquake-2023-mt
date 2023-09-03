@@ -6,4 +6,4 @@ scikit-learn
 streamlit
 stopwords
 demoji==0.4.0
-
+wordcloud
