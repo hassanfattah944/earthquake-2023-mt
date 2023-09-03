@@ -101,11 +101,9 @@ demoji.download_codes()
 def processed_text(text):
     # Remove emojis using the demoji library
     text = demoji.replace(text, repl="")
-
     # Remove numbers using regex
     text = re.sub(r'\d', '', text)
-
-     return text
+    return text
 st.info('Clean The DataSet.')
 # Apply the preprocessing function to the 'cleaned_content' column
 st.write(filtered_data)
