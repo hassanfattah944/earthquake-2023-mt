@@ -13,28 +13,10 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import wordnet
-from google.colab import drive
 st.set_page_config(
     page_title="ML App",
     page_icon="👋",
 )
-
-# Authenticate and mount Google Drive
-drive.mount('/content/drive')
-
-# Define the path to your dataset file
-dataset_path = "/content/drive/My Drive/tweets.csv‏"  # Modify this path accordingly
-
-# Load the dataset into a DataFrame
-df = pd.read_csv(dataset_path)
-
-# Streamlit app
-st.title("Google Drive Dataset Loader")
-
-# Display the dataset
-st.write("### Dataset:")
-st.write(df)
-
 
 
 st.subheader("ML Case-Studies | Natural Language Processing (NLP).")
