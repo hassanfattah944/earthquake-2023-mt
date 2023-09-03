@@ -212,10 +212,6 @@ plt.ylabel('Number of Tweets')
 st.pyplot(plt)
  
 
-
-# Streamlit app code
-
-st.image(wordcloud.to_array(), use_column_width=True)
  # Display the word cloud using Streamlit's pyplot function
 
 st.error("D.Encoding Data.")
