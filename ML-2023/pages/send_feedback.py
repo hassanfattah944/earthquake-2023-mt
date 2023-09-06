@@ -1,26 +1,29 @@
 import streamlit as st
 import pandas as pd
 from datetime import datetime
+
 st.set_page_config(
     page_title="ML App",
     page_icon="👋",
 )
+
 feedback_file = "feedback.csv"
 
 def save_feedback(name, feedback, rating):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     feedback_data = pd.DataFrame({"Timestamp": [timestamp], "Name": [name], "Feedback": [feedback], "Rating": [rating]})
     
-    if not st.session_state.feedback_df:
-        st.session_state.feedback_df = pd.DataFrame(columns=["Timestamp", "Name", "Feedback", "Rating"])
-        
-    st.session_state.feedback_df = st.session_state.feedback_df.append(feedback_data, ignore_index=True)
-    st.session_state.feedback_df.to_csv(feedback_file, index=False)
+    # Load existing feedback data (if any)
+    try:
+        existing_feedback_data = pd.read_csv(feedback_file)
+    except FileNotFoundError:
+        existing_feedback_data = pd.DataFrame(columns=["Timestamp", "Name", "Feedback", "Rating"])
+    
+    # Append the new feedback and save to Excel
+    updated_feedback_data = existing_feedback_data.append(feedback_data, ignore_index=True)
+    updated_feedback_data.to_csv(feedback_file, index=False)
 
 def main():
-
-    if "feedback_df" not in st.session_state:
-        st.session_state.feedback_df = None
     st.header("Provide Feedback")
     name = st.text_input("Your Name")
     feedback = st.text_area("Your Feedback")
@@ -32,17 +35,16 @@ def main():
     if name and feedback and rating:
         save_feedback(name, feedback, rating)
         st.success("Thank you for your feedback!")
+
     st.header("Saved Feedback")
-    if st.session_state.feedback_df is not None and not st.session_state.feedback_df.empty:
-        st.dataframe(st.session_state.feedback_df)
-    else:
-        st.info("No feedback yet.")
+    try:
+        feedback_data = pd.read_csv(feedback_file)
+        if not feedback_data.empty:
+            st.dataframe(feedback_data)
+        else:
+            st.info("No feedback yet.")
+    except FileNotFoundError:
+        st.info("No feedback yet. Be the first to provide feedback!")
 
 if __name__ == "__main__":
     main()
-hide_st_style = """
-            <style>
-            footer {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_st_style, unsafe_allow_html=True)
