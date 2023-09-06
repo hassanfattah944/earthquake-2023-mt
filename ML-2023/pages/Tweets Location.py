@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 df = pd.read_csv('ML-2023/tweet_data_labeled.csv')
-df.dropna(axis=0, inplace=True)##########3###
+#df.dropna(axis=0, inplace=True)##########3###
 
 st.write(df)
 def extract_coordinates(coord_string):
