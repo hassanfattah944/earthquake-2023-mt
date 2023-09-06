@@ -7,7 +7,7 @@ st.set_page_config(
     page_icon="👋",
 )
 
-feedback_file = "feedback.csv"
+feedback_file = "ML-2023/feedback.csv"
 
 def save_feedback(name, feedback, rating):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
