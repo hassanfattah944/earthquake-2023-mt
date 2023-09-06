@@ -1,9 +1,9 @@
-import folium
 import pandas as pd
 import streamlit as st
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 import seaborn as sns
+import folium
 from streamlit_folium import folium_static
 st.set_page_config(
     page_title="ML App",
