@@ -10,7 +10,7 @@ st.set_page_config(
     page_icon="👋",
 )
 
-df = pd.read_csv('tweet_data_labeled.csv')
+df = pd.read_csv('ML-2023/tweet_data_labeled.csv')
 df.dropna(axis=0, inplace=True)##########3###
 
 st.write(df)
