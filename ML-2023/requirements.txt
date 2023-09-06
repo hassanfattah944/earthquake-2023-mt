@@ -8,3 +8,5 @@ stopwords
 demoji==0.4.0
 wordcloud
 folium
+seaborn==x.x.x
+
